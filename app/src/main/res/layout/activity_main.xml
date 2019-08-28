@@ -19,7 +19,7 @@
         android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMetros" />
 
     <SeekBar
         android:id="@+id/seekBar"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtPes"
         android:layout_width="89dp"
         android:layout_height="41dp"
         android:layout_marginTop="84dp"
@@ -56,10 +56,10 @@
         android:layout_marginRight="56dp"
         android:text="0,00 Pés (s)"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMetros" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtMetros"
         android:layout_width="71dp"
         android:layout_height="33dp"
         android:layout_marginTop="76dp"
