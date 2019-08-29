@@ -9,10 +9,21 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
-
+//METODO E FUNCAO = MESMA COISA
+//DEFINICAO DA CLASSE        ---    HERDA ATRIBUTOS DE OUTRA CLASSE
 public class MainActivity extends AppCompatActivity {
 
+    //DECLARACAO DE VARIAVEL    --   0 SIGNIFICA QUE O VALOR INICIAL É ZERO
     int alturaEmCentimentros = 0;
+
+    //DECLARACAO DE VARIAVEL DO TIPO DOUBLE      -     O QUE ESTA ENTRE PARENTESES É ARGUMENTO / PARAMETRO
+    private String formataValorComDoisDigitos(double valor) {
+
+        //DECLARA A STRING E CONVERTE O VALOR INT EM TEXTO
+        String retorno = String.format(Locale.FRANCE, "%.2f", valor);
+
+        return retorno;
+    }
     /*
      * Protected - Somente classe atual e herdeiros podem usar
      * Void - Retorna Vazio
@@ -22,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //QUANDO POSSUI O SUPER ELE HERDA TODO O METODO
         super.onCreate(savedInstanceState);
+
         //Metodo que liga a MaisActivity.JAVA no activity_mais.xml (TELA)
         setContentView(R.layout.activity_main);
+
         /*
         Classe - Declara os componentes
         Instancia - Objeto Criado
@@ -32,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         //INSTACIA DE UM ELEMENTO TEXTO DO ANDROID
         final TextView txtMetros = (TextView) findViewById(R.id.txtMetros);
+
         //EXEMPLO CONVENCIONAL DE INSTANCIAR OBJETO NO JAVA
         //final TextView txtMetros = new TextView();
 
@@ -48,12 +63,19 @@ public class MainActivity extends AppCompatActivity {
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
-
-            @Override //DEFININDO A SEEKBAR PARA EXIBIR O VALOR NA TELA ENQUANTO SELECIONAMOS O TAMANHO
+//SOBRESCREVE O METODO HERDADO
+            @Override
+            //DEFININDO A SEEKBAR PARA EXIBIR O VALOR NA TELA ENQUANTO SELECIONAMOS O TAMANHO
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //DECLARANDO NOVO VALOR À VARIAVEL
                 alturaEmCentimentros = progress;
+
+                //FORMATA O VALOR "TEXTO" PARA EXIBIR DOIS DIGITOS
                 String texto = formataValorComDoisDigitos(progress / 100.0);
+
+
                 texto += " m. ";
+
                 txtMetros.setText(texto);
             }
 
@@ -83,8 +105,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String formataValorComDoisDigitos(double valor) {
-        return String.format(Locale.FRANCE, "%.2f", valor);
-
-    }
 }
+
