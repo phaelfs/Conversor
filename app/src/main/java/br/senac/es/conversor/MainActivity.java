@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
     //DECLARACAO DE VARIAVEL    --   0 SIGNIFICA QUE O VALOR INICIAL É ZERO
     int alturaEmCentimentros = 0;
 
-    int altura1 = 0;
-    int altura2 = 1;
-    int altura3 = 2;
-
+    int altura1 = 157;
+    int altura2 = 165;
+    int altura3 = 172;
+    int slide;
 
     //DECLARACAO DE VARIAVEL DO TIPO DOUBLE      -     O QUE ESTA ENTRE PARENTESES É ARGUMENTO / PARAMETRO
     private String formataValorComDoisDigitos(double valor) {
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 String texto = formataValorComDoisDigitos(progress / 100.0);
 
                 texto += " m. ";
-//
+                slide= progress;
                 txtMetros.setText(texto);
             }
 
@@ -116,19 +116,28 @@ public class MainActivity extends AppCompatActivity {
                 //DEFINE VALOR À STRING TEXTO
                 String texto = formataValorComDoisDigitos(alturaEmPes);
 
+
                 //TEXTO CONCATENADO COM A STRING
                 texto += " pé(s)";
                 txtPes.setText(texto);
+
+                double media = calcularMedia(altura1, altura2, altura3);
+                if(slide>media){
+                    txtMedia.setText("Maior que a Media");
+                }else if(slide==media){
+                    txtMedia.setText("Voce esta na media");
+                }else{
+                    txtMedia.setText("Voce esta a baixo da Media");
+                }
+
             }
         });
 
-        int media = calcularMedia(altura1, altura2, altura3);
 
     }
 
-    private int calcularMedia(int altura1, int altura2, int altura3) {
-        int media = altura1 + altura2 + altura3 / 3;
-        return media;
+    private double calcularMedia(double alt1, double alt2, double alt3) {
+        return (alt1 + alt2 + alt3) / 3;
     }
 
 }

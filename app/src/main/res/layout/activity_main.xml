@@ -26,11 +26,9 @@
         android:layout_width="318dp"
         android:layout_height="0dp"
         android:layout_marginTop="179dp"
-        android:layout_marginBottom="280dp"
         android:clickable="false"
         android:max="3"
         android:progress="1"
-        app:layout_constraintBottom_toTopOf="@+id/txtMedia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,11 +77,11 @@
         android:id="@+id/txtMedia"
         android:layout_width="120dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="174dp"
+        android:layout_marginBottom="152dp"
         android:text="Exercicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
